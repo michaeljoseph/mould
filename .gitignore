@@ -33,6 +33,29 @@ htmlcov/
 .cache
 nosetests.xml
 coverage.xml
+=======
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
 
 # Translations
 *.mo
@@ -50,5 +73,8 @@ coverage.xml
 *.pot
 
 # Sphinx documentation
-docs/_build/
+/docs/_build
+.idea
+*.iml
 
+.travis-solo
