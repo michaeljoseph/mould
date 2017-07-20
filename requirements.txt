@@ -1,9 +1,9 @@
 changes
+codecov
 coverage
 click
 flake8
 pytest
 pytest-cov
 pytest-watch
-python-coveralls
 sphinx-bootstrap-theme

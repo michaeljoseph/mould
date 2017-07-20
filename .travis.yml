@@ -10,4 +10,4 @@ script:
     - pytest --cov=mould --cov-report=term --cov-report=html
     - flake8 setup.py mould tests
 after_success:
-    - coveralls
+    - codecov
