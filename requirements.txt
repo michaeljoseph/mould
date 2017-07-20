@@ -1,3 +1,4 @@
+binaryornot
 changes
 codecov
 coverage

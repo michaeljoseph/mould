@@ -1,10 +1,9 @@
-"""Create cookiecutter templates from aisting directory"""
+"""Create a cookiecutter template from an existing project directory"""
+from .read import read_directory
 
 __author__ = 'Michael Joseph'
 __email__ = 'michaeljoseph@gmail.com'
 __url__ = 'https://github.com/michaeljoseph/mould'
 __version__ = '0.0.1'
 
-
-def mould():
-    return 'Hello World!'
+__all__ = [read_directory]
