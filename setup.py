@@ -15,7 +15,7 @@ setup(
     packages=['mould'],
     include_package_data=True,
     install_requires=[
-        'click < 2.1.0'
+        'click'
     ],
     entry_points={
         'console_scripts': [
