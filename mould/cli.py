@@ -1,6 +1,6 @@
 import logging
 
-import mould
+import click
 
 log = logging.getLogger(__name__)
 
