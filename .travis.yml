@@ -6,7 +6,7 @@ python:
 install:
     - pip install -r requirements.txt
 script:
-    - nosetests --with-coverage --cover-package=mould
+    - pytest --cov=mould --cov-report=term --cov-report=html
     - flake8 setup.py mould tests
 after_success:
   - coveralls

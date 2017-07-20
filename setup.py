@@ -22,6 +22,5 @@ setup(
             'mould = mould.cli:main',
         ],
     },
-    test_suite='nose.collector',
     license=open('LICENSE').read(),
 )
