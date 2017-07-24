@@ -1,5 +1,5 @@
 binaryornot
-changes
+changes==0.7.0
 codecov
 coverage
 click
