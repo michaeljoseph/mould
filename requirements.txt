@@ -2,7 +2,7 @@ changes==0.7.0
 codecov==2.0.9
 coverage==4.4.1
 click==6.7
-flake8
+flake8==3.3.0
 pytest
 pytest-cov
 pytest-watch
