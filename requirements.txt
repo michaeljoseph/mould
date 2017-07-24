@@ -7,4 +7,4 @@ flake8
 pytest
 pytest-cov
 pytest-watch
-sphinx-bootstrap-theme
+sphinx-bootstrap-theme==0.6.0
