@@ -1,4 +1,4 @@
-binaryornot
+binaryornot==0.4.3
 changes
 codecov
 coverage
