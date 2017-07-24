@@ -2,7 +2,7 @@ binaryornot
 changes
 codecov
 coverage
-click
+click==6.7
 flake8
 pytest
 pytest-cov
