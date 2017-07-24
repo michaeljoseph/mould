@@ -1,5 +1,5 @@
 changes==0.7.0
-codecov
+codecov==2.0.9
 coverage
 click
 flake8
