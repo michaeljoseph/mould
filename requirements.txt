@@ -1,6 +1,6 @@
 changes==0.7.0
 codecov==2.0.9
-coverage
+coverage==4.4.1
 click
 flake8
 pytest
