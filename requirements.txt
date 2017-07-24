@@ -1,6 +1,6 @@
 binaryornot==0.4.3
 changes
-codecov
+codecov==2.0.9
 coverage
 click
 flake8
