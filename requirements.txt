@@ -1,7 +1,7 @@
 binaryornot==0.4.3
 changes
 codecov==2.0.9
-coverage
+coverage==4.4.1
 click==6.7
 flake8
 pytest==3.1.3
