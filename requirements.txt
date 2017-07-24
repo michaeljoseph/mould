@@ -1,7 +1,7 @@
 binaryornot==0.4.3
 changes
 codecov
-coverage
+coverage==4.4.1
 click
 flake8
 pytest
