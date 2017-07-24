@@ -3,7 +3,7 @@ changes
 codecov
 coverage
 click
-flake8
+flake8==3.3.0
 pytest
 pytest-cov
 pytest-watch
