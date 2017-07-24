@@ -5,6 +5,6 @@ coverage
 click==6.7
 flake8
 pytest
-pytest-cov
+pytest-cov==2.5.1
 pytest-watch
 sphinx-bootstrap-theme
