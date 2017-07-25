@@ -7,8 +7,7 @@ def replace_directory_entries(directory_entries, replacements):
         for search, replace in replacements.items():
             entry['path'] = entry['path'].replace(search, replace)
 
-        for file_record in entry['files']:
-            for search, replace in replacements.items():
+            for file_record in entry['files']:
                 file_record['path'] = file_record['path'].replace(
                     search,
                     replace
