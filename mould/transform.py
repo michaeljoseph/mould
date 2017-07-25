@@ -1,6 +1,5 @@
 def replace_directory_entries(directory_entries, replacements):
     replaced_entries = []
-    replace_keys = ['path', 'content']
 
     for directory_entry in directory_entries:
         entry = dict(directory_entry)
@@ -10,13 +9,16 @@ def replace_directory_entries(directory_entries, replacements):
 
         for file_record in entry['files']:
             for search, replace in replacements.items():
-                for replace_key in replace_keys:
-                    replace_candidate = file_record[replace_key]
-                    if replace_candidate:
-                        file_record[replace_key] = replace_candidate.replace(
-                            search,
-                            replace
-                        )
+                file_record['path'] = file_record['path'].replace(
+                    search,
+                    replace
+                )
+
+                if not file_record['binary']:
+                    file_record['content'] = file_record['content'].replace(
+                        search,
+                        replace
+                    )
 
         replaced_entries.append(entry)
 
