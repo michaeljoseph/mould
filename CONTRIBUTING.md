@@ -9,7 +9,7 @@ You can contribute in many ways:
 
 ### Report Bugs
 
-Report bugs at <https://github.com/>michaeljoseph/mould/issues.
+Report bugs at <https://github.com/michaeljoseph/mould/issues>.
 
 If you are reporting a bug, please include:
 
@@ -30,14 +30,13 @@ Look through the GitHub issues for features. Anything tagged with
 
 ### Write Documentation
 
-A mould to create cookiecutters could always use more documentation,
-whether as part of the official A mould to create cookiecutters docs,
-in docstrings, or even on the web in blog posts, articles, and such.
+We could always use more documentation, whether as part of the official
+mould docs, in docstrings, or even on the web in blog posts and articles.
 
 ### Submit Feedback
 
 The best way to send feedback is to file an issue at
-<https://github.com/>michaeljoseph/mould/issues.
+<https://github.com/michaeljoseph/mould/issues>.
 
 If you are proposing a feature:
 
@@ -49,9 +48,9 @@ If you are proposing a feature:
 
 ## Documentation
 
-[API Documentation][(http://mould.rtfd.org)]
+[API Documentation][(https://mould.readthedocs.io)]
 
-## Testing
+## Development Setup
 
 Install development requirements:
 
@@ -59,23 +58,22 @@ Install development requirements:
 
 Tests can then be run with:
 
-    nosetests
+    pytest
 
 Lint the project with:
 
-    flake8 changes tests
+    flake8 mould tests setup.py
 
 ## API documentation
 
 Generate the documentation with:
 
-    cd docs && PYTHONPATH=.. make singlehtml
+    make -C docs html
 
-To monitor changes to Python files and execute flake8 and nosetests
-automatically, execute the following from the root project directory:
+To monitor changes to Python files and execute the tests
+automatically, use [pytest-watch](https://github.com/joeyespo/pytest-watch):
 
-    stir
-
+    ptw
 
 ## Pull Request Guidelines
 
@@ -84,7 +82,6 @@ Before you submit a pull request, check that it meets these guidelines:
 1.  The pull request should include tests.
 2.  If the pull request adds functionality, the docs should be updated.
     Put your new functionality into a function with a docstring, and add
-    the feature to the list in README.rst.
-3.  The pull request should work for Python 2.6, 2.7, and 3.3, and for
-    PyPy. Check <https://travis-ci.org/>michaeljoseph/mould/pulls and make sure that
+    the feature to the list in README.md.
+3.  Check <https://travis-ci.org/michaeljoseph/mould/pull_requests> and make sure that
     the tests pass for all supported Python versions.
