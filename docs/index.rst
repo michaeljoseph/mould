@@ -1,6 +1,9 @@
 mould
 =====
 
+.. toctree::
+   :maxdepth: 2
+
 .. automodule:: mould
     :members:
     :undoc-members:
