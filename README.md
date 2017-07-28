@@ -1,21 +1,11 @@
-mould
-=====
-
-Create cookiecutter templates from an existing project or module
-=======
 # mould
 
 [![Build Status](https://secure.travis-ci.org/michaeljoseph/mould.png)](http://travis-ci.org/michaeljoseph/mould)
-[![Stories in Ready](https://badge.waffle.io/michaeljoseph/mould.png?label=ready)](https://waffle.io/michaeljoseph/mould) [![pypi version](https://badge.fury.io/py/mould.png)](http://badge.fury.io/py/mould)
-[![# of downloads](https://pypip.in/d/mould/badge.png)](https://crate.io/packages/mould?version=latest)
-[![code coverage](https://coveralls.io/repos/michaeljoseph/mould/badge.png?branch=master)](https://coveralls.io/r/michaeljoseph/mould?branch=master)
+[![code coverage](https://codecov.io/gh/michaeljoseph/mould/branch/master/graph/badge.svg)](https://codecov.io/gh/michaeljoseph/mould)
 
 ## Overview
 
-Create cookiecutter templates from aisting directory
-
-* features
-* and stuff 
+Create [cookiecutter](https://github.com/audreyr/cookiecutter) templates from an existing project or module.
 
 ## Usage
 
@@ -23,35 +13,35 @@ Install `mould`:
 
     pip install mould
 
-Then execute the sample cli:
+Then execute the cli:
 
    mould
 
 ## Documentation
 
-[API Documentation](http://mould.rtfd.org)
+[API Documentation](https://mould.readthedocs.io)
 
 ## Testing
 
-Install development requirements:
+Install the development requirements:
 
     pip install -r requirements.txt
 
-Tests can then be run with:
+Run the tests:
 
-    nosetests
+    pytest
 
-Lint the project with:
+Lint the project:
 
-    flake8 mould tests
+    flake8 mould tests setup.py
 
 ## API documentation
 
 Generate the documentation with:
 
-    cd docs && PYTHONPATH=.. make singlehtml
+    make -C docs html
 
-To monitor changes to Python files and execute flake8 and nosetests
-automatically, execute the following from the root project directory:
+To monitor changes to Python files and execute the tests
+automatically, use [pytest-watch](https://github.com/joeyespo/pytest-watch):
 
-    stir
+    ptw

@@ -8,4 +8,4 @@ __email__ = 'michaeljoseph@gmail.com'
 __url__ = 'https://github.com/michaeljoseph/mould'
 __version__ = '0.0.1'
 
-__all__ = [read_directory, replace_directory_entries, write_directory]
+__all__ = ['read_directory', 'replace_directory_entries', 'write_directory']
