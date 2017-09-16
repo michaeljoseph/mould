@@ -93,7 +93,7 @@ def test_replace_directory_entries():
     ]
 
     replacements = {
-        'example-project': '{{cookiecutter.repo_name}}',
+        'example-project': 'repo_name',
     }
 
     assert (
