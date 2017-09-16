@@ -27,8 +27,8 @@ def mould(source_directory, replacements, output_directory):
 
     cookiecutter_json = os.path.join(output_directory, 'cookiecutter.json')
     io.open(cookiecutter_json, 'wt').write(
-        unicode(json.dumps({
+        json.dumps({
             value: key
             for key, value in replacements.items()
-        }))
+        })
     )
