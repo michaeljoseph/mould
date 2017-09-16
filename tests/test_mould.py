@@ -1,7 +1,5 @@
 from mould import mould
 
-from . import is_same
-
 
 def test_mould(tmpdir):
     output_directory = tmpdir

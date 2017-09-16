@@ -1,3 +1,5 @@
+import os
+
 from mould import read_directory
 
 
@@ -15,6 +17,25 @@ def test_read_directory():
         for directory in read_directory('tests/files/example-project')
     ]
     assert sorted(expected_directories) == sorted(directories)
+
+
+def test_read_directory_excludes_git():
+    os.mkdir('tests/files/example-project/.git')
+
+    expected_directories = [
+        'example-project',
+        'example-project/foo',
+        'example-project/foo/bar',
+        'example-project/foo/bar/baz',
+        'example-project/proj',
+    ]
+
+    directories = [
+        directory['path']
+        for directory in read_directory('tests/files/example-project')
+    ]
+    assert sorted(expected_directories) == sorted(directories)
+    os.rmdir('tests/files/example-project/.git')
 
 
 def test_read_directory_files():
