@@ -6,7 +6,6 @@ python:
 install:
     - pip install -U -r requirements.txt
 script:
-    - pytest -vv --cov=mould --cov-report=term-missing --cov-report=html
-    - flake8 setup.py mould tests
+    - make ci
 after_success:
     - codecov
