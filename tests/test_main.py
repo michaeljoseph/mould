@@ -11,15 +11,14 @@ def test_should_invoke_main(monkeypatch, tmpdir):
         'mould',
         'tests/files/example-project',
         str(tmpdir)
-    ], input=b'exit\n')
-
+    ], input=b'\n')
     decoded_response = response.decode('utf-8')
+
     expected_output = [
         'Reading from tests/files/example-project '
         'and writing to {}'.format(str(tmpdir)),
 
         'Enter a pattern to search for '
-        '(quit, or ctrl-c when done): '
+        '(enter when done): '
     ]
-
     assert '\n'.join(expected_output) == decoded_response

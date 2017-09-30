@@ -7,7 +7,7 @@ def test_cli(tmpdir):
     result = runner.invoke(
         main,
         ['tests/files/example-project', str(tmpdir)],
-        input=u'exit\n'
+        input=u'\n'
     )
 
     assert result.exit_code == 0
@@ -17,8 +17,7 @@ def test_cli(tmpdir):
         'and writing to {}'.format(str(tmpdir)),
 
         'Enter a pattern to search for '
-        '(quit, or ctrl-c when done): '
-        'exit\n'
+        '(enter when done): \n'
     ]
 
     assert '\n'.join(expected_output) == result.output
@@ -32,7 +31,7 @@ def test_cli_makes_one_replacement(tmpdir):
     result = CliRunner().invoke(
         main,
         ['tests/files/example-project', str(tmpdir)],
-        input=u'{}\n{}\nquit\ny\n'.format(pattern, name),
+        input=u'{}\n{}\n\ny\n'.format(pattern, name),
     )
 
     assert result.exit_code == 0

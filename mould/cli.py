@@ -26,12 +26,18 @@ def main(source, destination, debug, dry_run):
     done = False
     while not done:
         try:
-            pattern = click.prompt(click.style(
-                'Enter a pattern to search for '
-                '(quit, or ctrl-c when done)',
-                fg='green'))
-            if pattern in ['quit', 'exit']:
-                raise click.Abort
+            pattern = click.prompt(
+                click.style(
+                    'Enter a pattern to search for '
+                    '(enter when done)',
+                    fg='green'
+                ),
+                default='',
+                show_default=False
+            )
+            if pattern == '':
+                done = True
+                continue
 
             click.echo(
                 preview(
@@ -63,13 +69,16 @@ def main(source, destination, debug, dry_run):
             done = True
 
     if replacements:
-        click.confirm(click.style(
+        if not click.confirm(click.style(
             'Confirm moulding {} to {}, with replacements:\n{}\n'.format(
                 source,
                 destination,
+                # FIXME: print replacements better
                 json.dumps(replacements)),
             fg='yellow'
-        ))
+        )):
+            import sys
+            sys.exit(0)
 
         if not dry_run:
             mould(
