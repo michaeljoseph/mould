@@ -1,16 +1,19 @@
 import json
+
 import click
 
 from . import mould
 from . import read_directory
-from . import replace_directory_entries
+from .transform import preview
 
 
 @click.command()
 @click.argument('source', type=click.Path(exists=True))
 @click.argument('destination', type=click.Path())
-@click.option('--debug', default=False, help='Debug mode.')
-def main(source, destination, debug):
+@click.option('--debug', is_flag=True, default=False, help='Debug mode.')
+@click.option('--dry-run', is_flag=True, default=False, help='Dry run.')
+def main(source, destination, debug, dry_run):
+
     click.secho(
         'Reading from {} and writing to {}'.format(source, destination),
         fg='green',
@@ -23,34 +26,48 @@ def main(source, destination, debug):
     done = False
     while not done:
         try:
-            pattern = click.prompt('Enter a pattern to search for')
+            pattern = click.prompt(click.style(
+                'Enter a pattern to search for '
+                '(quit, or ctrl-c when done)',
+                fg='green'))
             if pattern in ['quit', 'exit']:
                 raise click.Abort
 
-            name = click.prompt('Name it')
-
-            replacement = {
-                pattern: name
-            }
-
-            replace_directory_entries(
-                source_files,
-                replacement,
-                preview=True
+            click.echo(
+                preview(
+                    source_files,
+                    {
+                        pattern: '<temporary-name>'
+                    },
+                )
             )
 
-            replacements.update(replacement)
+            name = click.prompt('Give this pattern a name (or enter to discard)',
+                                default='', show_default=False)
 
+            if name:
+                replacements[pattern] = name
+
+            if replacements:
+                click.secho(
+                    'Current replacements {}'.format(json.dumps(replacements)),
+                    fg='yellow'
+                )
         except click.Abort:
             done = True
 
-    click.prompt(click.style(
-        'Moulding with replacements {}'.format(json.dumps(replacements)),
-        fg='yellow'
-    ))
+    if replacements:
+        click.confirm(click.style(
+            'Confirm moulding {} to {}, with replacements:\n{}\n'.format(
+                source,
+                destination,
+                json.dumps(replacements)),
+            fg='yellow'
+        ))
 
-    mould(
-        source,
-        replacements,
-        destination,
-    )
+        if not dry_run:
+            mould(
+                source,
+                replacements,
+                destination,
+            )
