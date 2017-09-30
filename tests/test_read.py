@@ -50,7 +50,6 @@ def test_read_directory_files():
             'example-project/foo/bar/baz/sample.txt'
         ],
         'example-project/proj': [
-            'example-project/proj/.gitkeep'
         ],
     }
 
@@ -65,7 +64,6 @@ def test_read_directory_types():
         'example-project/README.md': False,
         'example-project/file.bin': True,
         'example-project/foo/bar/baz/sample.txt': False,
-        'example-project/proj/.gitkeep': False,
     }
 
     directory_entries = read_directory('tests/files/example-project')

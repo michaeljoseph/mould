@@ -1,3 +1,3 @@
+from .cli import main
 
-import mould.cli
-mould.cli.main()
+main(prog_name='mould')
