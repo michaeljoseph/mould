@@ -1,4 +1,3 @@
-import textwrap
 from click.testing import CliRunner
 from mould.cli import main
 
