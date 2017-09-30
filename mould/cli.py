@@ -42,8 +42,14 @@ def main(source, destination, debug, dry_run):
                 )
             )
 
-            name = click.prompt('Give this pattern a name (or enter to discard)',
-                                default='', show_default=False)
+            name = click.prompt(
+                click.style(
+                    'Give this pattern a name (or enter to discard)',
+                    fg='green'
+                ),
+                default='',
+                show_default=False
+            )
 
             if name:
                 replacements[pattern] = name
