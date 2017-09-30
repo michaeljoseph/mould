@@ -24,7 +24,6 @@ clean: ## Remove all file artifacts
 lint: ## Check code style with flake8
 	@echo "+ $@"
 	@flake8 setup.py tests mould ##tox -e flake8
-	@pydocstyle setup.py mould tests
 
 .PHONY: ci
 ci: test lint ## Run continuous integration check
@@ -47,7 +46,6 @@ docs: ## Generate Sphinx HTML documentation, including API docs
 	@rm -f docs/modules.rst
 	@$(MAKE) -C docs clean
 	@$(MAKE) -C docs html
-	@pycco -d docs/_build
 
 .PHONY: servedocs
 servedocs: docs ## Rebuild docs automatically
