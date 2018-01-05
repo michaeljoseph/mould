@@ -1,6 +1,6 @@
 binaryornot==0.4.4
 changes==0.7.0
-codecov==2.0.9
+codecov==2.0.12
 coverage==4.4.2
 click==6.7
 flake8==3.5.0
